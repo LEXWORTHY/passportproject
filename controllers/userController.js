@@ -21,18 +21,11 @@ function isUserValid(user, password) {
   return user.password === password;
 }
 
-const createUser = (id,email) => {
-
-}
-
 const getUserByGitHubIdOrCreate = (profile) => {
-  console.log("In getUserByGitHubIDorCreate");
-  console.log(profile.id, profile.name);
-  let user = userModel.findById(profile.id)
-  if (user) {
-    return user
+  let user = userModel.findBySocailLoginId(profile.id)
+  if (user === "NOT_FOUND") {
+    user = userModel.createOne(profile.id, profile.displayName, profile.email)
   } 
-  user = userModel.createOne(profile.id, profile.name, profile.email);
   return user;
 };
 
