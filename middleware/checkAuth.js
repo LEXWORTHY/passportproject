@@ -11,4 +11,12 @@ module.exports = {
     }
     res.redirect("/dashboard");
   },
+  isAdmin: function (req, res, next) {
+    if (req.isAuthenticated()) {
+      return next();
+    }
+    res.redirect("/auth/login");
+    // console.log(req.user);
+    return next();
+  }
 };

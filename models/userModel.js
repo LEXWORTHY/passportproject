@@ -40,8 +40,7 @@ const userModel = {
     const fileUpateData = `const database = 
     ${JSON.stringify(database)}
     module.exports = database;`;
-    console.log("new file content: ", JSON.stringify(fileUpateData));
-    fs.writeFile( path.normalize(path.join(__dirname,'userDatabase.js')), fileUpateData, (err) => {if (err) throw err; console.log("Database Updated");})
+    fs.writeFile( path.normalize(path.join(__dirname,'userDatabase.js')), fileUpateData, (err) => {if (err) throw err; return;})
     return newUser;
   }
 };
