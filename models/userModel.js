@@ -27,7 +27,7 @@ const userModel = {
     return "NOT_FOUND";
   },
   createOne: (newId, newName, newEmail ) => {
-    console.log("Creating user");
+
     const newUser = 
     {
       id: newId,

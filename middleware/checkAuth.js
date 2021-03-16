@@ -16,7 +16,7 @@ module.exports = {
       return next();
     }
     res.redirect("/auth/login");
-    // console.log(req.user);
+
     return next();
   }
 };
